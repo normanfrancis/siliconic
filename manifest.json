@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "Siliconic",
+  "version": "1.0",
+
+  "description": "Adds styling adjustments to any webpages matching siliconera.com.",
+
+  "icons": {
+    "48": "icons/videogame-48.png",
+    "96": "icons/videogame-96.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.siliconera.com/*"],
+      "css": ["css/siliconic.css"]
+    }
+  ]
+
+}

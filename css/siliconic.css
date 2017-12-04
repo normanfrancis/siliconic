@@ -1,0 +1,13 @@
+body {
+	background-color: #333;
+}
+
+.leftcontainer {
+	width: auto;
+	background-color: #333;
+}
+
+.post {
+	color: white;
+	font-size: 16px;
+}
