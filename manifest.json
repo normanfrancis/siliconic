@@ -6,16 +6,23 @@
 
   "description": "Adds styling adjustments to any webpages matching siliconera.com.",
 
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+
   "icons": {
     "48": "icons/videogame-48.png",
     "96": "icons/videogame-96.png"
   },
 
-  "content_scripts": [
-    {
-      "matches": ["*://*.siliconera.com/*"],
-      "css": ["css/siliconic.css"]
-    }
-  ]
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "browser_action": {
+    "default_icon": "icons/videogame-48.png",
+    "default_title": "Iconic"
+  }
 
 }
