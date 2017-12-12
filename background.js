@@ -15,18 +15,26 @@ function toggleCss(tab) {
 			tabStates[tab.id] = true;
 		}
 	}
-
-	console.log(tabStates);
 }
 
 
 var gettingAllTabs = browser.tabs.query({});
 var tabStates = {};
+
 gettingAllTabs.then((tabs) => {
 	for (let tab of tabs) {
 		tabStates[tab.id] = false;
 		toggleCss(tab);
 	}
+});
+
+browser.tabs.onUpdated.addListener((id, changeInfo, tab) => {
+	tabStates[id] = false;
+	toggleCss(tab);
+});
+
+browser.tabs.onRemoved.addListener((id, removeInfo) => {
+	delete tabStates[id];
 });
 
 browser.browserAction.onClicked.addListener(toggleCss);
